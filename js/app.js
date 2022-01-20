@@ -1,4 +1,4 @@
-const loadMore = document.querySelector("#load-more");
+const loadMore = document.getElementById("load-more-btn");
 
 function loadPosts() {
     fetch("https://rakib0101.github.io/blog_json/blog.json")
@@ -8,15 +8,21 @@ function loadPosts() {
             displayThreeColPosts(data);
         });
 }
+loadPosts();
+
+
 function loadDuePosts() {
-    
+    console.log('clicked');
     fetch("https://rakib0101.github.io/blog_json/blog.json")
         .then((res) => res.json())
         .then((data) => {
+            console.log(data);
             displayDuePosts(data);
             loadMore.style.display = "none";
         });
 }
+loadMore.addEventListener('click', loadDuePosts)
+
 function displayTwoColPosts(posts) {
     const slicePosts = posts.slice(0, 2);
     const twoColPosts = document.getElementById("two-col-posts");
@@ -64,7 +70,7 @@ function displayDuePosts(posts) {
         console.log(post);
     }
 }
-loadPosts();
+
 
 //Menu
 const menu = document.querySelector(".menu");
