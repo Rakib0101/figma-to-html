@@ -30,17 +30,22 @@
                 </div>
                 <div class="menu-area">
                     <nav>
-                        <ul>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Service</a></li>
-                            <li><a href="">Pricing</a></li>
-                            <li><a href="">Blog</a></li>
+                        <ul class="menu">
+                            <li><a class="menuItem" href="">About</a></li>
+                            <li><a class="menuItem" href="">Service</a></li>
+                            <li><a class="menuItem" href="">Pricing</a></li>
+                            <li><a class="menuItem" href="">Blog</a></li>
+                            <li><a class=" menuItem mobile-menu-contact"  href="">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="contact-btn">
                     <a href="">Contact</a>
                 </div>
+                <button class="hamburger">
+                    <i class="menuIcon fas fa-bars"></i>
+                    <i class="closeIcon fas fa-times"></i>
+                </button>
             </div>
             <div class="banner-section">
                 <h1>Blog Articles</h1>
@@ -58,7 +63,8 @@
                 <div id="three-col-posts"></div>
             </div>
             <div class="load-more-btn">
-                <button>
+                <div id="load-more-three-col-posts"></div>
+                <button id="load-more" onclick="loadDuePosts()">
                     <a href="">Load More</a>    
                 </button>
             </div>
@@ -71,7 +77,7 @@
                 <div>
                     <h2>Newsletter</h2>
                 </div>
-                <div>
+                <div class="newsletter-form">
                     <input class="text-input" type="text" placeholder="Your Email">
                     <input class="btn-input" type="button" value="SUBSCRIBE">
                 </div>
