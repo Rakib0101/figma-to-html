@@ -11,7 +11,8 @@ function loadPosts() {
 loadPosts();
 
 
-function loadDuePosts() {
+function loadDuePosts(e) {
+    e.preventDefault();
     console.log('clicked');
     fetch("https://rakib0101.github.io/blog_json/blog.json")
         .then((res) => res.json())
@@ -56,7 +57,7 @@ function displayThreeColPosts(posts) {
 function displayDuePosts(posts) {
     const slicePosts = posts.slice(8, 12);
     console.log(slicePosts);
-    const threeColPosts = document.getElementById("load-more-three-col-posts");
+    const loadThreeColPosts = document.getElementById("load-more-three-col-posts");
     for (const post of slicePosts) {
         const div = document.createElement("div");
         div.classList.add("load-more-three-blog-post");
@@ -66,7 +67,7 @@ function displayDuePosts(posts) {
             <h2 class="blog-title">${post.blog_title}</h2>
             <p class="published-date">${post.published_date}</P>
         `;
-        threeColPosts.appendChild(div);
+        loadThreeColPosts.appendChild(div);
         console.log(post);
     }
 }
